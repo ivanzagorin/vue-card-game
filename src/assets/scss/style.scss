@@ -1,0 +1,216 @@
+@import './_reset';
+@import './_variables';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap');
+
+body{
+    background: $deep-blue;
+    overflow-y: scroll;
+    *{
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+.nav{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    text-align: center;
+    padding: 30px 0 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: $bright-yellow;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a{
+        text-decoration: none;
+        color: $bright-yellow;
+    }
+    span{
+        margin: 0 5px;
+    }
+}
+.content{
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.empty-playground{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 200px);
+    &-title{
+        font-size: 26px;
+        font-weight: 700;
+        color: #fff;
+    }
+}
+
+.btn{
+    cursor: pointer;
+    padding: 16px 30px;
+    font-size: 24px;
+    font-weight: 700;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    &:hover{
+        transform: translateY(5px);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+    }
+    &-yellow{
+        background: $bright-yellow;
+    }
+    &-blue{
+        background: $blue;
+        color: #fff;
+    }
+    &-fix-width{
+        width: 240px;
+        text-align: center;
+    }
+}
+
+.playground{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    &-manage{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+    &-btns{
+        .btn:first-child{
+            margin-right: 30px;
+        }
+    }
+    &-timer{
+        font-size: 24px;
+        font-weight: 600;
+        color: #fff;
+    }
+    &-message{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: calc(100% - 70px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(50, 88, 134, 0.5);
+        span{
+            font-size: 24px;
+            font-weight: 700;
+            padding: 20px;
+            background: $yellow;
+        }
+    }
+}
+.card{
+    width: 15%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: 0.3s;
+    &-front{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        background: $yellow;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backface-visibility: hidden;
+        transition: 0.5s;
+        img{
+            max-width: 150px;
+        }
+    }
+    &-back{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+        background: $yellow;
+        transition: 0.5s;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+    &.flip{
+        .card-front{
+            transform: rotateY(180deg)
+        }
+        .card-back{
+            transform: rotateY(360deg)
+        }
+    }
+    &.hidden{
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.leaderboard{
+    width: 100%;
+    &-item{
+        color: #fff;
+        font-size: 20px;
+        margin-bottom: 12px;
+        span{
+            display: inline-block;
+            width: 130px;
+            font-size: 26px;
+            font-weight: 600;
+        }
+        &:first-child{
+            span{
+                color: gold;
+            }
+        }
+        &:nth-child(2){
+            span{
+                color: #c7c7c7;
+            }
+        }
+        &:nth-child(3){
+            span{
+                color: #cd7f32;
+            }
+        }
+    }
+}
