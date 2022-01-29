@@ -5,8 +5,7 @@ import { shuffle } from '../helpers';
 const cards = ref([]);
 
 const getCards = () => {
-  // const cardsResponse = shuffle(response).slice(0, 9);
-  const cardsResponse = shuffle(response).slice(0, 1);
+  const cardsResponse = shuffle(response).slice(0, 9);
   cardsResponse.forEach((item, i) => {
     cards.value.push({
       img: item.img,
