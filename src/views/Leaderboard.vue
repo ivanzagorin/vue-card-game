@@ -18,7 +18,7 @@ export default {
     const store = useStore();
     const convert = convertTime;
     const leaders = store.getters.leaderBoard;
-    leaders.sort((a, b) => b - a);
+    leaders.sort((a, b) => a - b);
 
     return { leaders, convert };
   },

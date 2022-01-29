@@ -11,6 +11,7 @@ export default function createGame() {
   let totalTime = ref();
   let message = ref('');
   const userCanFlip = ref(false);
+  const gameTime = 300;
   let ticker;
 
   const store = useStore();
@@ -37,7 +38,7 @@ export default function createGame() {
     gameWon.value = false;
     gameLost.value = false;
     userCanFlip.value = true;
-    totalTime.value = 300;
+    totalTime.value = gameTime;
   }
 
   const restartGame = () => {
@@ -77,7 +78,7 @@ export default function createGame() {
       if(win) {
         clearInterval(ticker);
         message.value = 'Вы выиграли!';
-        store.commit('addGameResult', totalTime.value);
+        store.commit('addGameResult', gameTime - totalTime.value);
       }
     }
   )
