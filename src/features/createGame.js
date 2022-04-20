@@ -15,7 +15,7 @@ export default function createGame() {
   let ticker;
 
   const store = useStore();
-  const currentGame = store.getters.game;
+  const currentGame = store.state.game;
   if (currentGame) {
     cards.value = currentGame.cards;
     gameStarted.value = currentGame.gameStarted;

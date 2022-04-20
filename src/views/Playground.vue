@@ -26,7 +26,7 @@ import { onBeforeRouteLeave } from 'vue-router';
 import { useStore } from 'vuex'
 import { convertTime } from '../helpers';
 import Card from '../components/Card.vue';
-import GameMessage from '../components/GameMessage.vue';
+import GameMessage from '../components/GameMessage';
 import createGame from '../features/createGame';
 
 export default {

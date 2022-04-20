@@ -5,10 +5,6 @@ export default createStore({
     game: null,
     leaderBoard: []
   },
-  getters: {
-    game: s => s.game,
-    leaderBoard: s => s.leaderBoard,
-  },
   mutations: {
     saveGame(state, gameInfo){
       state.game = gameInfo

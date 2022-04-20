@@ -17,7 +17,7 @@ export default {
   setup() {
     const store = useStore();
     const convert = convertTime;
-    const leaders = store.getters.leaderBoard;
+    const leaders = store.state.leaderBoard;
     leaders.sort((a, b) => a - b);
 
     return { leaders, convert };
